@@ -1,11 +1,16 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 
 export default function App() {
-    const [starWarsData, setStarWarsData] = React.useState({})
+    const [starWarsData, setStarWarsData] = useState({})
 
-    fetch("https://swapi.dev/api/people/1")
-      .then(res => res.json())
-      .then(data => setStarWarsData(data))
+
+
+    //Side Effects
+    useEffect(function() {
+        fetch("https://swapi.dev/api/people/1")
+            .then(res => res.json())
+            .then(data => setStarWarsData(data))
+    }, [])
 
     return (
         <div>
