@@ -7,11 +7,11 @@ export default function App() {
 
 
     //Side Effects
-    useEffect(function() {
-        // fetch("https://swapi.dev/api/people/1")
-        //     .then(res => res.json())
-        //     .then(data => setStarWarsData(data))
+    useEffect(() => {
+        console.log("effect function ran")
     }, [count])
+
+    }
 
     return (
         <div>
